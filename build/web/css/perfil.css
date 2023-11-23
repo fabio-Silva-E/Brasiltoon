@@ -1,0 +1,125 @@
+
+
+.profile-container {
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.border-text2 {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+     background-color: #000000	; /* Cor de fundo escura (preta) */
+            color: #fff; /* Cor do texto branca */
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #3498db;
+    color: #fff;
+}
+
+img {
+    max-width: 150px;
+    height: auto;
+    border-radius: 50%;
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 20px;
+}
+
+a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+/* Adaptações para dispositivos móveis */
+@media (max-width: 768px) {
+    .profile-container {
+        max-width: 90%;
+        margin: 20px auto;
+        padding: 10px;
+    }
+
+    .border-text2 {
+        padding: 5px;
+        font-size: 16px; /* Tamanho da fonte reduzido */
+    }
+
+    table {
+        margin-top: 10px;
+    }
+
+    th, td {
+        padding: 8px;
+        font-size: 14px; /* Tamanho da fonte reduzido */
+    }
+
+    img {
+        max-width: 100px;
+        margin-bottom: 10px;
+    }
+    
+    /* Adicione regras de estilo específicas para dispositivos móveis aqui */
+}
+ .profile-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .profile-image-container {
+            width: 150px; /* Largura do contêiner da imagem */
+            height: 150px; /* Altura do contêiner da imagem */
+            border-radius: 50%; /* Define a forma redonda */
+            overflow: hidden; /* Recorta a imagem para que fique redonda */
+        }
+
+        .profile-image {
+            max-width: 100%;
+            height: 100%; /* Manter a altura igual à altura do contêiner */
+            object-fit: cover; /* Impede a deformação, preenchendo o contêiner */
+        }
+
+        .clickable-image {
+            cursor: pointer;
+            transition: transform 0.3s; /* Adiciona uma transição suave para o aumento de tamanho */
+        }
+
+        .clickable-image:hover {
+            transform: scale(1.2); /* Aumenta o tamanho da imagem ao passar o mouse sobre ela */
+        }
+
+        .centered-content {
+            text-align: center;
+        }
+
+/*body {
+            font-family: Arial, sans-serif;
+            background-color: #000000	; 
+            color: blue;
+        }*/
+        

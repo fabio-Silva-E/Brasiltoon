@@ -1,0 +1,76 @@
+.favoritar-button {
+    
+  
+    border: none;
+    cursor: pointer;
+   
+    font-size: 14px; /* Reduza o tamanho do texto */
+    height: 40px; /* Aumente a altura do botão */
+  }
+
+
+
+.fixed-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    z-index: 999;
+    text-align: center;
+    padding: 5px 0; /* Reduza o padding superior e inferior */
+    font-size: 16px; /* Ajuste o tamanho do texto do cabeçalho */
+}
+.btn-mobile {
+    font-size: 100px; /* Aumente o tamanho do texto */
+    padding: 50px 60px; /* Aumente o espaço interno */
+    width: auto; /* Permite que a largura seja definida automaticamente */
+}
+/* Estilos para manter o cabeçalho fixo */
+.header {
+    position: fixed;
+    
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff; /* Cor de fundo do cabeçalho */
+    z-index: 1; /* Certifique-se de que o cabeçalho esteja acima do conteúdo */
+}
+
+/* Estilos para a div do visualizador PDF */
+.pdf-viewer {
+      top: 100%;
+    margin-top: 0; /* Deixe espaço para o cabeçalho fixo */
+    overflow-x: hidden; /* Ocultar a rolagem horizontal */
+    overflow-y: auto; /* Habilitar a rolagem vertical em dispositivos móveis */
+    height: 100vh; 
+     width: 100%;
+      background-size: cover; 
+}
+#listaCapitulos {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    z-index: 1000;
+    overflow: auto; /* Adicione esta propriedade para permitir rolagem */
+    display: none;
+}
+
+/* Restante do seu estilo... */
+
+
+.vertical-list table {
+    display: block;
+}
+.fixed-content {
+    position: fixed;
+    top: 0; /* Ajuste conforme necessário para a posição vertical */
+    left: 0; /* Ajuste conforme necessário para a posição horizontal */
+    width: 100%;
+    background-color: #fff; /* Cor de fundo opcional */
+    /* Ajuste conforme necessário para sobrepor outros elementos */
+    /* Adicione outras propriedades de estilo conforme necessário */
+}

@@ -1,0 +1,81 @@
+ /* Adicione estas regras ao seu arquivo de estilo CSS */
+
+#tabelaHistorias {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1px; /* Espaçamento entre cada tabela (ajuste conforme necessário) */
+}
+#tabelaHistorias table {
+  width: 100%; /* Garante que a tabela interna ocupe 100% da largura da célula */
+}
+
+
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  border-radius: 8px; /* Arredondar as bordas da tabela (ajuste conforme necessário) */
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra para destacar a tabela */
+}
+
+th, td ,tr{
+  padding: 0px;
+  text-align: center;
+}
+
+.imagem-cell {
+  border-radius: 8px 8px 0 0; /* Arredondar apenas as bordas superiores da célula de imagem */
+  overflow: hidden;
+}
+
+.imagem-cell img {
+     max-width: 100px;
+        max-height: 100px;
+ 
+  height: auto;
+  border-radius: 10px; /* Arredondar as bordas da imagem */
+}
+
+      #button {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 0px;
+            color: #333;
+            text-decoration: none;
+        }
+      .center {
+            text-align: center;
+        }
+      
+/* Adicione margem superior ao corpo da página para que o conteúdo não fique por baixo da barra de navegação */
+.btn{
+     width: 100%;
+    
+}
+/* Adicione ao seu arquivo de estilo CSS */
+form.searching {
+    pointer-events: none;
+}
+ .nav-bar {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 1000; /* Ajuste conforme necessário */
+    /* Adicione outras propriedades de estilo conforme necessário */
+}
+  body {
+            background-color: #000000	; /* Cor de fundo escura (preta) */
+            color: #fff; /* Cor do texto branca */
+        }
+        

@@ -1,0 +1,90 @@
+/* Reduza a margem do corpo */
+ body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+/* Faça com que o main ocupe a largura total da tela */
+  main {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+
+/* Reduza o tamanho da fonte do h1 */
+h1 {
+  text-align: center;
+  color: #333;
+  font-size: 2em;
+}
+
+/* Faça com que o input ocupe a largura total e reduza padding/margin */
+input {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 5px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Reduza o tamanho da fonte para links e aumente o espaçamento entre eles */
+a {
+  color: #3498db;
+  text-decoration: none;
+  font-size: 1em;
+  margin: 10px;
+}
+
+/* Modificações para .profile-container */
+.profile-container {
+  width: 100%;
+  max-width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+/* Ajustes para imagens */
+img {
+  max-width: 100%; /* Para imagens ocuparem a largura total */
+  height: auto;
+  border-radius: 50%;
+  margin: 0 auto;
+  display: block;
+  margin-bottom: 20px;
+}
+
+/* Mantém o resto do seu CSS */
+.center {
+  text-align: center;
+}
+
+.center-table {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+   .center-body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }

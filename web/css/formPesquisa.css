@@ -1,0 +1,19 @@
+
+/* Adicione ao seu arquivo de estilo CSS */
+.search-container {
+  position: relative;
+}
+
+.search-container input {
+  padding-right: 30px; /* Ajuste conforme necessário para acomodar o ícone */
+}
+
+.search-container .icon {
+  position: absolute;
+  top: 50%;
+  right: 10px; /* Posicionamento do ícone à direita */
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #aaa; /* Cor do ícone */
+}
+

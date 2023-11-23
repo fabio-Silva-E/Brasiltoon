@@ -1,0 +1,29 @@
+   .nav-bottom {
+    font-size: 12px; /* Defina o tamanho da fonte desejado */
+    height: 70px; /* Defina a altura desejada para a barra de navegação */
+   background-color: #363636	 /* Outros estilos personalizados */
+}
+ .nav-item {
+        margin: 0; /* Reduce the margin between each li element */
+    }
+
+    .nav-link {
+        padding: 8px; /* Add padding to the buttons for spacing */
+    }
+
+    .fixed-bottom {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: 999; /* Adjust the z-index as needed */
+        background-color: #363636	; /* Green background color */
+    }
+
+    @media (max-width: 768px) {
+        /* CSS for screens with a maximum width of 768px (typical for mobile) */
+        .nav-link {
+            font-size: 14px; /* Adjust the font size for mobile screens */
+            padding: 8px; /* Adjust the padding for mobile screens */
+        }
+    }

@@ -1,0 +1,5 @@
+caminho-do-arquivo filter=lfs diff=lfs merge=lfs -text
+E:/5º_semestre/programação_web/Brasiltoon filter=lfs diff=lfs merge=lfs -text
+E:/5º_semestre/programação_web/Brasiltoon/dist filter=lfs diff=lfs merge=lfs -text
+E:/5º_semestre/programação_web/Brasiltoon/.git filter=lfs diff=lfs merge=lfs -text
+E:/5º_semestre/programação_web/Brasiltoon/dist filter=lfs diff=lfs merge=lfs -text
