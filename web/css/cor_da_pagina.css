@@ -1,5 +1,6 @@
-   body {
-             
-                background-color: #000000; /* Cor de fundo escura (preta) */
-            color: #fff; 
-            }
+   
+    body.dark-background {
+        background-color: #000; /* Cor de fundo escura, neste caso, preta */
+        color: #fff; /* Cor do texto, neste caso, branco */
+    }
+

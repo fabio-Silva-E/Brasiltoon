@@ -99,8 +99,8 @@ a {
         }
 
         .profile-image {
-            max-width: 100%;
-            height: 100%; /* Manter a altura igual à altura do contêiner */
+            max-width: 50%;
+            height: 50%; /* Manter a altura igual à altura do contêiner */
             object-fit: cover; /* Impede a deformação, preenchendo o contêiner */
         }
 
@@ -116,6 +116,24 @@ a {
         .centered-content {
             text-align: center;
         }
+       body.dark-background {
+        background-color: #000;
+        color: #fff;
+    }
+
+    .center {
+        text-align: center;
+    }
+
+    .centered-content {
+        margin: 0 auto;
+    }
+
+    .mt-3 {
+        margin-top: 3rem;
+    }
+
+    /* Adicione outras regras de estilo conforme necessário */
 
 /*body {
             font-family: Arial, sans-serif;

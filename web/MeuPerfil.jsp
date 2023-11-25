@@ -6,6 +6,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
+     
 
         <%
             Usuario p = (Usuario) request.getAttribute("login");
@@ -15,7 +16,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Perfil</title>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="./css/nav.css">
+        
 
         <script src="Js/acessar.js" defer></script>
         <script src="Js/InvalidatSession.js" defer></script>
@@ -25,27 +26,27 @@
 
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     </head>
-    <body>   
+<body class="dark-background">
 
         <div class="fixed-content">
             <jsp:include page="componentelogo.jsp" />
         </div>
 
-        <div class="profile-container">
+        <div class="center">
 
             Meu Perfil
 
 
-            <div class="profile-image-container">
+            <div class="center">
                 <img src="<%=p.getCaminho()%>" alt="Foto de Perfil" class="profile-image clickable-image" id="profile-image">
             </div>
-            <div class="container mt-5">
+            <div class="center">
                 <form name="frm" method="post" action="upload?operacao=2" enctype="multipart/form-data" class="mt-3 centered-content">
                     <input type="hidden" name="id" value="<%=p.getId()%>">  
-                    <div class="input-group">
+                    <div class="center">
                         <input type="file" name="novaFoto" id="novaFoto" accept="image/*" class="form-control d-none">
                         <label for="novaFoto" class="input-group-text">
-                            <i class="fas fa-upload"></i> alterar foto de perfil
+                            <i class="fas fa-camera"></i> alterar foto de perfil
                         </label>
                     </div>
 
@@ -53,7 +54,7 @@
                     <button type="submit" class="btn btn-primary">Atualizar Foto</button>
                 </form>
 
-                <table class="mt-3 centered-content">
+                <table class="center">
 
                     <tr>
                         <th>Nome</th>

@@ -32,6 +32,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
             box-sizing: border-box;
             border: 1px solid #ccc;
             border-radius: 4px;
+            
         }
 
         form {
@@ -64,3 +65,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
      width: 100%;
     
 }
+   body {
+             
+                background-color: #000000; /* Cor de fundo escura (preta) */
+            color: #fff; 
+            }

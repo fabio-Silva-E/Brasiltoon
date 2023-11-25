@@ -24,7 +24,7 @@
             <input value="<%= p.getId()%>" type="hidden" name="id">
             <div class="mb-3">
                 <label for="nome" class="form-label">Nome</label>
-                <input value="" type="text" id="nome" name="nome" class="form-control">
+                <input value="<%= p.getNome()%>" type="text" id="nome" name="nome" class="form-control">
             </div>
             <div class="mb-3">
                 <label for="telefone" class="form-label">Telefone</label>
