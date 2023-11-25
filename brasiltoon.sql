@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 22/11/2023 às 23:05
+-- Tempo de geração: 25/11/2023 às 15:10
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.0.28
 
@@ -6609,6 +6609,19 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
+-- Estrutura para tabela `tokens_redefinicao`
+--
+
+CREATE TABLE `tokens_redefinicao` (
+  `id` int(11) NOT NULL,
+  `user_id` varchar(255) DEFAULT NULL,
+  `token` varchar(255) DEFAULT NULL,
+  `data_expiracao` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura para tabela `usuario`
 --
 
@@ -6626,7 +6639,7 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`email`, `senha`, `nome`, `telefone`, `caminho`, `id`) VALUES
-('fs27106@gmail.com', '32458758', 'fabio', 324232435, 'perfil/17004403713973097454120104205890.jpg', '12'),
+('fs27106@gmail.com', '12345678', 'fabio', 324232435, 'perfil/17004403713973097454120104205890.jpg', '12'),
 ('laisla.mota@gmail.com', '[32458758]', 'laisla', 996739127, 'perfil/fundo.jpg', '13'),
 ('dsfgsfs@gdvhdjd', '[32458758]', 'sbdd ns', 12345678901, 'perfil/fundo.jpg', '14'),
 ('fs25@gmail', '12345678', 'fabio', 324232435, 'perfil/fundo.jpg', '155ef2fb-747b-11ee-bcfc-d053492c702c'),
@@ -6693,6 +6706,12 @@ ALTER TABLE `historias`
   ADD KEY `autorid` (`autorid`);
 
 --
+-- Índices de tabela `tokens_redefinicao`
+--
+ALTER TABLE `tokens_redefinicao`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Índices de tabela `usuario`
 --
 ALTER TABLE `usuario`
@@ -6728,6 +6747,12 @@ ALTER TABLE `comentarios`
 --
 ALTER TABLE `historias`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=142;
+
+--
+-- AUTO_INCREMENT de tabela `tokens_redefinicao`
+--
+ALTER TABLE `tokens_redefinicao`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de tabela `usuario_historia`
