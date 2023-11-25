@@ -141,7 +141,7 @@ function atualizarTabela(data) {
         const imagemCell = $('<td>').addClass('imagem-cell');
 
         const imagemLink = $('<a>').attr('href', 'HistoriasServlet?operacao=6&id=' + historia.id+'&idhc='+historia.capa);
-        const imagem = $('<img>').attr('src', historia.capa).css({'width': '200px', 'height': '200px'});
+        const imagem = $('<img>').attr('src', historia.capa).css({'width': '100px', 'height': '100px'});
         imagemLink.append(imagem);
         imagemCell.append(imagemLink);
         imagemRow.append(imagemCell);

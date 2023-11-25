@@ -29,7 +29,7 @@
             <table class="center center-table">
                 <tr><td>Altere sua senha</td></tr>
                 <tr><td><form name="frm" method="post" action="redefinicao_de_senha"  >
-              <input type="text" name="token" id="token" value="<%= token %>">
+              <input type="hidden" name="token" id="token" value="<%= token %>">
                             <label for="senha" class="form-label">
                                 <span>Senha</span>
                 <input type="password" id="senha" placeholder="Digite sua senha" name="novaSenha" class="form-control" required maxlength="8">

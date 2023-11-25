@@ -20,7 +20,7 @@
     <% int id = Integer.parseInt(request.getParameter("id")); %>
       <section id="postagem-section" class="container"> 
     <form name="frm" method="post" action="capitulosServlet" enctype="multipart/form-data">
-        <input type="text" name="idhistoria" id="idhistoria" value="<%=id%>">
+        <input type="hidden" name="idhistoria" id="idhistoria" value="<%=id%>">
         <div class="mb-3">
             <label for="capa" class="input-group-text">
             <i class="fas fa-upload"></i> insira a capa

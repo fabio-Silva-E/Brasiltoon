@@ -79,7 +79,7 @@ public class HomeController extends HttpServlet {
             int operacao = Integer.parseInt(request.getParameter("operacao"));
             MinhaBiblioteca b = new MinhaBiblioteca();
             BibliotecaDao l = new BibliotecaDao();
-            Usuario o = new Usuario();
+           
             Historias e = new Historias();
             HistoriasDao p = new HistoriasDao();
 
@@ -139,14 +139,14 @@ public class HomeController extends HttpServlet {
                 case 4:
                     String email = request.getParameter("email");
                     String senha = request.getParameter("senha");
-
+                     Usuario o = new Usuario();
                     o = L.localizarRegistroCadastro(senha, email);
 
                     if (o != null) {
                         // Usuário encontrado, encaminhe para a página de alteração de cadastro
-                        request.setAttribute("login", o);
-                        RequestDispatcher r = request.getRequestDispatcher("/alteracaoCadastro.jsp");
-                        r.forward(request, response);
+                        request.setAttribute("login", L.localizarRegistroCadastro(senha, email));
+                        RequestDispatcher sr = request.getRequestDispatcher("/alteracaoCadastro.jsp");
+                        sr.forward(request, response);
                     } else {
                         // Usuário não encontrado, redirecione para uma página de erro ou exiba uma mensagem
                         response.sendRedirect("erro.jsp?resultado=7");
