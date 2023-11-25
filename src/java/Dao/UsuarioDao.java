@@ -175,7 +175,7 @@ public static boolean Cadastrar(Usuario p) {
         con = new Conexao().conectar();
 
         if (con != null) {
-            String sql = "SELECT senha FROM usuario WHERE email = ? ";
+            String sql = "SELECT * FROM usuario WHERE email = ? ";
             ps = con.prepareStatement(sql);
             ps.setString(1, email);
 
@@ -184,7 +184,7 @@ public static boolean Cadastrar(Usuario p) {
             rs.next();
                 // Verifica se há resultados antes de acessar os dados
                 Usuario c = new Usuario();
-                c.setSenha(rs.getString("senha"));
+                c.setId(rs.getString("id"));
                  
 
                               
@@ -372,4 +372,94 @@ public static Usuario Meucadastro(String id) {
         return null;
     }
 }
+    
+        public void salvarTokenRedefinicao(String userId, String token) {
+        Connection con= null;
+        PreparedStatement preparedStatement = null;
+
+        try {
+            // obter a conexão com o banco de dados
+                con = new Conexao().conectar();
+            // Query SQL para inserir ou atualizar o token de redefinição
+           String sql = "INSERT INTO tokens_redefinicao (user_id, token, data_expiracao) VALUES (?, ?, NOW() + INTERVAL 1 DAY) ON DUPLICATE KEY UPDATE token = VALUES(token), data_expiracao = VALUES(data_expiracao)";
+            
+            preparedStatement = con.prepareStatement(sql);
+            preparedStatement.setString(1, userId);
+            preparedStatement.setString(2, token);
+
+            // Execute a query
+            preparedStatement.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace(); // ou trate a exceção conforme necessário
+        } finally {
+            // Feche a conexão e o preparedStatement
+            // Certifique-se de tratar exceções aqui também
+            try {
+                if (preparedStatement != null) {
+                    preparedStatement.close();
+                }
+                if (con != null) {
+                    con.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace(); // ou trate a exceção conforme necessário
+            }
+        }
+    }
+    
+public boolean redefinirSenhaComToken(String token, String novaSenha) {
+    Connection connection = null;
+    PreparedStatement preparedStatement = null;
+
+    try {
+        connection = new Conexao().conectar();// obter a conexão com o banco de dados
+
+        // Query SQL para obter o user_id associado ao token
+        String sql = "SELECT user_id FROM tokens_redefinicao WHERE token = ? AND data_expiracao < NOW()";
+        preparedStatement = connection.prepareStatement(sql);
+        preparedStatement.setString(1, token);
+
+        ResultSet resultSet = preparedStatement.executeQuery();
+
+        if (resultSet.next()) {
+            String userId = resultSet.getString("user_id");
+
+            // Atualiza a senha na tabela de usuários
+            String updateSql = "UPDATE usuario SET senha = ? WHERE id = ?";
+            preparedStatement = connection.prepareStatement(updateSql);
+            preparedStatement.setString(1, novaSenha);
+            preparedStatement.setString(2, userId);
+
+            preparedStatement.executeUpdate();
+
+            // Remove o token de redefinição após a redefinição de senha
+            String deleteSql = "DELETE FROM tokens_redefinicao WHERE token = ?";
+            preparedStatement = connection.prepareStatement(deleteSql);
+            preparedStatement.setString(1, token);
+
+            preparedStatement.executeUpdate();
+
+            return true; // Redefinição de senha bem-sucedida
+        }
+    } catch (SQLException e) {
+        e.printStackTrace(); // ou trate a exceção conforme necessário
+    } finally {
+         try {
+                if (preparedStatement != null) {
+                    preparedStatement.close();
+                }
+                if (connection != null) {
+                    connection.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace(); // ou trate a exceção conforme necessário
+            }
+    }
+
+    return false; // Falha na redefinição de senha
+}
+
+
+   
 }

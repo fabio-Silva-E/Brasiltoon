@@ -54,6 +54,11 @@
                 <h2>Email e/ou senha inválido(s)</h2>
                 <a href="solicitacao.html" class="btn btn-primary">Voltar</a>
             <%
+                } else if (resultado == 8) {
+            %>
+                <h2>Errro na alteração</h2>
+                <a href="index.html" class="btn btn-primary">Voltar</a>
+            <%
                 }
             %>
         </div>

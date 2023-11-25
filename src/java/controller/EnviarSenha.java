@@ -4,6 +4,7 @@ import Dao.UsuarioDao;
 import Vo.Usuario;
 import java.io.IOException;
 import static java.lang.ProcessBuilder.Redirect.to;
+import java.time.LocalDateTime;
 import java.util.Properties;
 import javax.mail.Message;
 import javax.mail.MessagingException;
@@ -17,7 +18,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import java.util.UUID;
 @WebServlet("/EmailSenderServlet")
 public class EnviarSenha extends HttpServlet {
 
@@ -41,12 +42,19 @@ public class EnviarSenha extends HttpServlet {
                 return new PasswordAuthentication(username, password);
             }
         });
+             String toEmail = request.getParameter("to");
+              Usuario user = l.localizarsenha(toEmail);
+               String token = gerarTokenExclusivo();
+            l.salvarTokenRedefinicao(user.getId(), token);
+           String link = "http://localhost:8082/Brasiltoonversion/alterar_senha.jsp?token=" + token;
 
-        String toEmail = request.getParameter("to");
-        Usuario user = l.localizarsenha(toEmail);
+            // Crie a mensagem de e-mail com o link
+                 
+       
 
         if (user != null) {
-            String mensagem = "Esta e sua senha não compartilhe com ninguem: " + user.getSenha();
+          //  String mensagem = "Esta e sua senha não compartilhe com ninguem: " + user.getSenha();
+               String mensagem = "Clique no link a seguir para redefinir sua senha:\n\n" + link;
 
             try {
                 // Criação da mensagem
@@ -70,4 +78,12 @@ public class EnviarSenha extends HttpServlet {
         }
 
     }
+    private String gerarTokenExclusivo() {
+    // Gera um UUID (Universally Unique Identifier)
+    String  token= UUID.randomUUID().toString();
+     LocalDateTime expiracao = LocalDateTime.now().plusHours(24);
+    String tokenComExpiracao = token + "|" + expiracao.toString();
+    return tokenComExpiracao;
+
+}
 }

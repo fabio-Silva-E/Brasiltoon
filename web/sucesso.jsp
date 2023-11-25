@@ -41,8 +41,8 @@
         <%
             } else if (resultado == 5) {
         %>
-               <h2>Erro no envio. Revise seu e-mail.</h2>
-                <a href="index.html">Voltar</a>
+               <h2>Senha alterada com sucesso</h2>
+                <a href="login.jsp">Voltar</a>
         <%
             }  else if (resultado == 6) {
                 

@@ -64,6 +64,10 @@
         <servlet-name>CarrocelServlet</servlet-name>
         <servlet-class>controller.CarrocelServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>redefinicao_de_senha</servlet-name>
+        <servlet-class>controller.redefinicao_de_senha</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CadastroController</servlet-name>
         <url-pattern>/CadastroController</url-pattern>
@@ -127,6 +131,10 @@
     <servlet-mapping>
         <servlet-name>CarrocelServlet</servlet-name>
         <url-pattern>/CarrocelServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>redefinicao_de_senha</servlet-name>
+        <url-pattern>/redefinicao_de_senha</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
